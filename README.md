@@ -1,27 +1,16 @@
-# DailyEntries
+# SISTEMA SIMPLES PARA REGISTRO DE HORÁRIO
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.9.
+### - Desafio Avanade -
 
-## Development server
+Proposta: Desenvolver qualquer ideia que utilizasse mais de três componentes Angular e quatro componentes Angular Material. 
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Explicação: A aplicação tem como objetivo registrar o horário de entrada e de saída de determinado funcionário, mantendo o registro no histórico. 
 
-## Code scaffolding
+Foi criado um componente pai (Home Component), o qual faz uma chamada para outros dois componentes, o componente de formulário, responsável por entregar os inputs de entrada e saída e o componente de histórico, responsável por exibir o retorno das informações armazenadas. 
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Os Componentes de formulário tanto de entrada quanto de saída possuem o componente Input do Angular Material com um type time. Com a propriedade ngModel do Angular Forms um binding é feito para chamar as variáveis de entrada/saida do arquivo typescript. Já na tag de form o evento de submit ativa a função que envia os dados inseridos no formulário para o componente pai ( Home Component ), que ativa a propriedade nativa de binding de uma instância EventEmitter de Output. O componente de histórico usa a tabela do Angular Material para fazer a exibição dos registros de horários. Ele possui uma array que retorna as duas colunas ( entrada e saida) e faz um binding do componente pai para o componente filho ( formulário para home para histórico ) para receber os dados inseridos no @input ( estrutura no componente pai:  *[historicoHorarios]*). 
 
-## Build
+Além desses componentes maiores, existe a implementação de um componente simples (modalAlert) que é disparado quando é efetuado o evento de registro.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.

@@ -1,0 +1,12 @@
+<form class="example-form" (submit)="enviaDado()">
+  <mat-form-field class="example-full-width">
+    <mat-label>Horário de Entrada</mat-label>
+    <input [(ngModel)]="entrada" matInput type="time" name="entrada" required />
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Horário de Saída</mat-label>
+    <input [(ngModel)]="saida" matInput type="time" name="saida" required />
+  </mat-form-field>
+  <button mat-raised-button color="primary">Bater Ponto</button>
+</form>
